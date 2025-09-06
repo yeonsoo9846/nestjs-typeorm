@@ -41,13 +41,8 @@ export const nextJsConfig = tseslint.config(
     settings: { react: { version: "detect" } },
     rules: {
       ...pluginReactHooks.configs.recommended.rules,
-      // Next.js/React specific rules (extending base)
       "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off", // Using TypeScript for prop validation
-      "@typescript-eslint/no-unused-vars": ["error", { 
-        argsIgnorePattern: "^_",
-        varsIgnorePattern: "^_"
-      }],
+      "react/prop-types": "off",
     },
   },
 );
