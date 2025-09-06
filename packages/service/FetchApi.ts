@@ -2,7 +2,7 @@ import { postRefreshToken } from './queryHooks';
 import { decryption, encryption, getCookie, setCookie } from '@repo/lib';
 
 // Types
-interface FetchApiOptions extends RequestInit {
+interface FetchApiOptions extends Omit<RequestInit, 'body'> {
   auth?: boolean;
   queryString?: URLSearchParams;
   tags?: string[];
@@ -10,6 +10,7 @@ interface FetchApiOptions extends RequestInit {
   dataType?: 'jsonString' | 'formData';
   accessToken?: string;
   isServer?: boolean;
+  body?: any;
 }
 
 interface FetchConfig extends RequestInit {
