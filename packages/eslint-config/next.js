@@ -45,4 +45,11 @@ export const nextJsConfig = tseslint.config(
       "react/prop-types": "off",
     },
   },
+  {
+    ignores: [
+      ".next/**",
+      "next-env.d.ts",
+      "**/*.d.ts",
+    ],
+  },
 );
