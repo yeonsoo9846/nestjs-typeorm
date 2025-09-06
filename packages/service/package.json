@@ -1,0 +1,16 @@
+{
+  "name": "@repo/service",
+  "version": "1.0.0",
+  "description": "Shared API service functions",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "require": "./index.ts"
+    }
+  },
+  "dependencies": {
+    "@repo/lib": "workspace:*"
+  }
+}
