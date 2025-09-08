@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/service": "workspace:*",
+    "@repo/lib": "workspace:*",
     "@repo/ui": "workspace:*",
     "next": "^15.5.0",
     "react": "^19.1.0",
