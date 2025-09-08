@@ -22,6 +22,11 @@ export class UsersService {
     return await this.userRepository.findOne({ where: { id } });
   }
 
+  // 이메일로 사용자 조회
+  async findByEmail(email: string): Promise<User | null> {
+    return await this.userRepository.findOne({ where: { email } });
+  }
+
   // 사용자 생성
   async create(createUserDto: CreateUserDto): Promise<User> {
     const user = this.userRepository.create(createUserDto);

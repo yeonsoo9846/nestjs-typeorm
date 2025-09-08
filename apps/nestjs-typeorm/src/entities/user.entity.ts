@@ -5,9 +5,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import { LoginHistory } from './loginHistory.entity';
+import { RefreshToken } from './refreshToken.entity';
 
 @Entity('users') // 테이블명
 export class User {
@@ -31,6 +35,12 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => LoginHistory, (loginHistory) => loginHistory.user)
+  loginHistories: LoginHistory[];
+
+  @OneToMany(() => RefreshToken, (refreshToken) => refreshToken.user)
+  refreshTokens: RefreshToken[];
 
   @BeforeInsert()
   @BeforeUpdate()
